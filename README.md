@@ -1,17 +1,13 @@
-1. pkg update 
-
-2. pkg upgrade -y
-
-3. pkg install git
-
-4. pkg install python -y
-
-5. git clone https://github.com/CPMElsedev/CPMElsedev.git
-
-6. cd CPMElsedev
-
-7. git pull
-
-8. pip install -r requirements.txt
-
-9. python main.py
+pkg update
+pkg upgrade -y
+pkg install git
+pkg install python-pip
+git clone https://github.com/CPMGalakz/CPMGala.git
+cd CPMGala
+git pull
+python3 -m pip install requests
+pkg i python-numpy
+pip install rich --upgrade
+pip install -r requirements.txt
+pip3 install pystyle
+python main.py
