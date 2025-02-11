@@ -12,7 +12,7 @@ from rich.style import Style
 import pystyle
 from pystyle import Colors, Colorate
 
-from carparktool import CarParkTool
+from cpmgala import Cpmgala
 
 __CHANNEL_USERNAME__ = "cpm_gala"
 __GROUP_USERNAME__   = "cpmgala_chat"
