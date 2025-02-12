@@ -6,9 +6,9 @@
 
 4. pkg install python-pip
 
-5. git clone https://github.com/CPMgalatool/CPMgalatool.git
+5. git clone https://github.com/CPMGalakz/CPMGala.git
 
-6. cd CPMgalatool
+6. cd CPMGala
 
 7. git pull
 
