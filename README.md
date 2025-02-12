@@ -1,9 +1,8 @@
-# CPMAyan
+# CPMGala
 
-<h3>CPMAyan is a tool made to modify Car Parking Multiplayer accounts with no root or vertual app.</h3>
-<h4>you just need an Access Key, wich you can get from <a href="">@cpmayanbot</a> for free with 1K Credits Balance.</h4>
+<h3>CPMGala is a tool made to modify Car Parking Multiplayer accounts with no root or vertual app.</h3>
+<h4>you just need an Access Key, wich you can get from <a href="">@CPMGalaBot</a> for free with 1K Credits Balance.</h4>
 
-![](./Screenshot_20241229_184732.jpg)
 
 #### Tested on:
 
@@ -16,19 +15,27 @@
 
 ### Android (Termux):
 
+- `pkg update`
+- `pkg upgrade -y`
 - `pkg install git`
-- `pkg install python python-pip`
-- `git clone https://github.com/cpm1tool/cpm1tool.git`
-- `cd cpm1tool`
+- `pkg install python-pip`
+- `git clone https://github.com/CPMGalakz/CPMGala.git`
+- `cd CPMGala`
+- `git pull`
+- `python3 -m pip install requests`
+- `pkg i python-numpy`
+- `pip install rich --upgrade`
 - `pip install -r requirements.txt`
+- `pip3 install pystyle`
 - `python main.py`
 
 ### IPhone (ISH):
 
+- `apk update`
 - `apk add git`
 - `apk add python3`
 - `apk add py3-pip`
-- `git clone https://github.com/cpm1tool/cpm1tool.git`
-- `cd cpm1tool`
-- `pip install -r requirements.txt`
+- `git clone https://github.com/CPMGalakz/CPMGala.git`
+- `cd CPMGala`
+- `pip3 install -r requirements.txt`
 - `python3 main.py`
