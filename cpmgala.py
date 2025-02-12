@@ -1,6 +1,6 @@
 import requests
 from time import sleep
-BASE_URL: str = "https://red-viper-815239.hostingersite.com/api" 
+BASE_URL: str = "https://cpmgala1.squareweb.app/api" 
 
 class CPMGala:
 
