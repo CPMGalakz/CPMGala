@@ -1,7 +1,7 @@
 # CPMGala
 
 <h3>CPMGala is a tool made to modify Car Parking Multiplayer accounts with no root or vertual app.</h3>
-<h4>you just need an Access Key, wich you can get from <a href="https://t.me/CPMGalaBot</a>">@CPMGalaBot</a> for free with 1K Credits Balance.</h4>
+<h4>You just need an Access Key, wich you can get from <a href="https://t.me/CPMGalaBot</a>">@CPMGalaBot</a> for free with 1K Credits Balance.</h4>
 
 
 #### Tested on:
