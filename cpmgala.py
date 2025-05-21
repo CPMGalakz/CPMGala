@@ -1,8 +1,8 @@
 import requests
 
-__ENDPOINT_URL__: str = "https://elmalvado69.squareweb.app/api"
+__ENDPOINT_URL__: str = "https://cpmgala1.squareweb.app/api"
 
-class Elmalvadohshs:
+class CPMGala:
     def __init__(self, access_key) -> None:
         self.auth_token = None
         self.access_key = access_key
