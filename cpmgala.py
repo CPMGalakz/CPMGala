@@ -1,4 +1,4 @@
-import requests
+ import requests
 from time import sleep
 BASE_URL: str = "https://cpmgala1.squareweb.app/api"
 
@@ -232,7 +232,14 @@ class CPMGala:
             "new_torque": new_torque,
         }
         params = { "key": self.access_key }
-        response = requests.post(f"{BASE_URL}/hack_car_speed", params=params, data=payload)
+        response = requests.post(f"{__ENDPOINT_URL__}/hack_car_speed", params=params, data=payload)
+        response_decoded = response.json()
+        return response_decoded.get("ok")
+    
+    def unlock_animations(self) -> bool:
+        payload = { "account_auth": self.auth_token }
+        params = { "key": self.access_key }
+        response = requests.post(f"{__ENDPOINT_URL__}/unlock_animations", params=params, data=payload)
         response_decoded = response.json()
         return response_decoded.get("ok")
 
@@ -243,9 +250,9 @@ class CPMGala:
         "custom": custom,
         }
         params = {"key": self.access_key}
-        response = requests.post(f"{BASE_URL}/max_max1", params=params, data=payload)
+        response = requests.post(f"{__ENDPOINT_URL__}/max_max1", params=params, data=payload)
         response_decoded = response.json()
-        return response_decoded.get("ok")
+        return response_decoded.get("ok")  
         
     def max_max2(self, car_id, custom):
         payload = {
@@ -254,18 +261,7 @@ class CPMGala:
         "custom": custom,
         }
         params = {"key": self.access_key}
-        response = requests.post(f"{BASE_URL}/max_max2", params=params, data=payload)
-        response_decoded = response.json()
-        return response_decoded.get("ok")
-        
-    def millage_car(self, car_id, custom):
-        payload = {
-        "account_auth": self.auth_token,
-        "car_id": car_id,
-        "custom": custom,
-        }
-        params = {"key": self.access_key}
-        response = requests.post(f"{BASE_URL}/millage_car", params=params, data=payload)
+        response = requests.post(f"{__ENDPOINT_URL__}/max_max2", params=params, data=payload)
         response_decoded = response.json()
         return response_decoded.get("ok")
 
@@ -276,7 +272,104 @@ class CPMGala:
         "custom": custom,
         }
         params = {"key": self.access_key}
-        response = requests.post(f"{BASE_URL}/brake_car", params=params, data=payload)
+        response = requests.post(f"{__ENDPOINT_URL__}/brake_car", params=params, data=payload)
+        response_decoded = response.json()
+        return response_decoded.get("ok")
+
+    def millage_car(self, car_id, custom):
+        payload = {
+        "account_auth": self.auth_token,
+        "car_id": car_id,
+        "custom": custom,
+        }
+        params = {"key": self.access_key}
+        response = requests.post(f"{__ENDPOINT_URL__}/millage_car", params=params, data=payload)
         response_decoded = response.json()
         return response_decoded.get("ok")
         
+    def rear_bumper(self, car_id):
+        payload = {
+        "account_auth": self.auth_token,
+        "car_id": car_id,
+        }
+        params = {"key": self.access_key}
+        response = requests.post(f"{__ENDPOINT_URL__}/rear_bumper", params=params, data=payload)
+        response_decoded = response.json()
+        return response_decoded.get("ok")
+        
+    def front_bumper(self, car_id):
+        payload = {
+        "account_auth": self.auth_token,
+        "car_id": car_id,
+        }
+        params = {"key": self.access_key}
+        response = requests.post(f"{__ENDPOINT_URL__}/front_bumper", params=params, data=payload)
+        response_decoded = response.json()
+        return response_decoded.get("ok")
+        
+    def change_password(self, new_password):
+        payload = { "account_auth": self.auth_token, "new_password": new_password }
+        params = { "key": self.access_key}
+        response = requests.post(f"{__ENDPOINT_URL__}/change_password", params=params, data=payload)
+        response_decoded = response.json()
+        if response_decoded.get("new_token"):
+            self.auth_token = response_decoded["new_token"]
+        return response_decoded.get("ok")
+        
+    def change_email(self, new_email):
+        payload = {
+            "account_auth": self.auth_token,
+            "new_email": new_email
+        }
+        params = {
+            "key": self.access_key,
+            "new_email": new_email
+        }
+        response = requests.post(f"{__ENDPOINT_URL__}/change_email", params=params, data=payload)
+        response_decoded = response.json()
+        if response_decoded.get("new_token"):
+            self.auth_token = response_decoded["new_token"]
+        return response_decoded.get("ok")
+        
+    def unlock_crown(self) -> bool: 
+        payload = { "account_auth": self.auth_token } 
+        params = { "key": self.access_key } 
+        response = requests.post(f"{__ENDPOINT_URL__}/unlock_crown", params=params, data=payload) 
+        response_decoded = response.json() 
+        return response_decoded.get("ok")
+        
+    def incline(self, car_id, custom):
+        payload = {
+        "account_auth": self.auth_token,
+        "car_id": car_id,
+        "custom": custom,
+        }
+        params = {"key": self.access_key}
+        response = requests.post(f"{__ENDPOINT_URL__}/incline", params=params, data=payload)
+        response_decoded = response.json()
+        return response_decoded.get("ok")
+        
+    def speed_all_cars(self, new_hp, new_inner_hp, new_nm, new_torque):
+        payload = { 
+        "account_auth": self.auth_token, 
+        "new_hp": new_hp, 
+        "new_inner_hp": new_inner_hp, 
+        "new_nm": new_nm, 
+        "new_torque": new_torque
+        }
+        params = { "key": self.access_key, "new_hp": new_hp, "new_inner_hp": new_inner_hp, "new_nm": new_nm, "new_torque": new_torque }
+        response = requests.post(f"{__ENDPOINT_URL__}/speed_all_cars", params=params, data=payload)
+        response_decoded = response.json()
+        return response_decoded.get("ok")
+        
+    def spoiler(self, car_id, custom):
+        payload = {
+        "account_auth": self.auth_token,
+        "car_id": car_id,
+        "custom": custom,
+        }
+        params = {"key": self.access_key}
+        response = requests.post(f"{__ENDPOINT_URL__}/spoiler", params=params, data=payload)
+        response_decoded = response.json()
+        return response_decoded.get("ok")
+ 
