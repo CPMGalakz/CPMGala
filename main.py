@@ -13,12 +13,12 @@ from pystyle import Colors, Colorate
 from pystyle import Colorate, Colors, Col
 from pystyle import Colorate, Colors
 
-from elmalvadocpm import Elmalvadohshs
+from cpmgala import CPMGala
 
-__CHANNEL_USERNAME__ = "ELMALVADOMAINCHATS"
-__GROUP_USERNAME__   = "ELMALVADOMAINCHANNELS"
-__TIKTOK_NAME__      = "EL MALVADO_CPM"
-__TIKTOK_USER__      = "car.parking.rd4"
+__CHANNEL_USERNAME__ = "cpm_gala"
+__GROUP_USERNAME__   = "cpmgala_chat"
+__TIKTOK_NAME__      = "NO"
+__TIKTOK_USER__      = "NO"
 
 def signal_handler(sig, frame):
     print("\n Bye Bye...")
@@ -149,7 +149,7 @@ if __name__ == "__main__":
         acc_password = prompt_valid_value("[bold][?] Account Password[/bold]", "Password", password=False)
         acc_access_key = prompt_valid_value("[bold][?] Access Key[/bold]", "Access Key", password=False)
         console.print("[bold cyan][%] Trying to Login[/bold cyan]: ", end=None)
-        cpm = Elmalvadohshs(acc_access_key)
+        cpm = CPMGala(acc_access_key)
         login_response = cpm.login(acc_email, acc_password)
         if login_response != 0:
             if login_response == 100:
